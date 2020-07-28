@@ -16,6 +16,6 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 
 COPY start-griddb.sh /usr/local/bin/
 RUN ln -s usr/local/bin/start-griddb.sh /start-docker-griddb.sh
-ENTRYPOINT ["start-docker-griddb.sh"]
+ENTRYPOINT ["start-griddb.sh"]
 
 USER gsadm
