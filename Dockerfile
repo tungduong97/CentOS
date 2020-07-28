@@ -7,6 +7,8 @@ ENV GS_HOME=/var/lib/gridstore
 ENV GS_LOG=/var/lib/gridstore/log
 
 WORKDIR $GS_HOME
+USER gsadm
+
 RUN set -x &&\
 su - gsadm -c "gs_passwd admin -p admin"
 RUN set -x && \
@@ -15,5 +17,3 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 
 COPY start-griddb.sh .
 CMD ["/bin/sh", "start-griddb.sh"]
-
-USER gsadm
