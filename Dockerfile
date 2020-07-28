@@ -17,4 +17,4 @@ RUN ln -s /usr/local/bin/start-griddb.sh /entrypoint.sh
 
 USER gsadm
 RUN gs_startnode
-RUN gs_joincluster -c dockerGridDB -u admin/admin
+CMD "gs_joincluster -c dockerGridDB -u admin/admin"
