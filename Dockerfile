@@ -14,6 +14,6 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 /var/lib/gridstore/conf/gs_cluster.json
 
 COPY start-griddb.sh .
-RUN start-griddb.sh
+ENTRYPOINT ["/bin/sh", "start-griddb.sh"]
 
 USER gsadm
