@@ -16,4 +16,5 @@ COPY start-griddb.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/start-griddb.sh /entrypoint.sh
 
 USER gsadm
-CMD ["/bin/sh","/usr/local/bin/start-griddb.sh"]
+RUN gs_startnode
+RUN gs_joincluster -c dockerGridDB -u admin/admin
