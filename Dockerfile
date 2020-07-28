@@ -6,7 +6,7 @@ RUN rpm -ivh https://github.com/griddb/griddb_nosql/releases/download/v${GRIDDB_
 ENV HOME=/var/lib/gridstore
 ENV GS_HOME=/var/lib/gridstore
 ENV GS_LOG=/var/lib/gridstore/log
-
+VOLUME $HOME
 WORKDIR $HOME
 RUN set -x &&\
 su - gsadm -c "gs_passwd admin -p admin"
