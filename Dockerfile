@@ -12,7 +12,8 @@ su - gsadm -c "gs_passwd admin -p admin"
 RUN set -x && \
 sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 /var/lib/gridstore/conf/gs_cluster.json
+
 COPY start-griddb.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/start-griddb.sh entrypoint.sh
-RUN chmod +x entrypoint.sh
-RUN ./entrypoint.sh
+RUN chmod a+x entrypoint.sh
+CMD ./entrypoint.sh
