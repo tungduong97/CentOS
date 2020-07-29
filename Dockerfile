@@ -6,7 +6,7 @@ RUN rpm -ivh https://github.com/griddb/griddb_nosql/releases/download/v${GRIDDB_
 ENV GS_HOME=/var/lib/gridstore
 ENV GS_LOG=/var/lib/gridstore/log
 
-WORKDIR $GS_HOME
+WORKDIR /root/
 RUN set -x &&\
 su - gsadm -c "gs_passwd admin -p admin"
 RUN set -x && \
@@ -14,6 +14,7 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 /var/lib/gridstore/conf/gs_cluster.json
 COPY start-griddb.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/start-griddb.sh entrypoint.sh
-RUN ./entrypoint.sh
+RUN entrypoint.sh
 
+WORKDIR $GS_HOME
 USER gsadm
