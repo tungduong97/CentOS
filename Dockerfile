@@ -16,4 +16,4 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 COPY start-griddb.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/start-griddb.sh entrypoint.sh
 RUN chmod a+x entrypoint.sh
-CMD ./entrypoint.sh
+CMD ["/bin/bash", "./entrypoint.sh"]
