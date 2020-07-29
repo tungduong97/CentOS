@@ -15,4 +15,4 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 
 COPY start-griddb.sh /
 RUN chmod a+x /start-griddb.sh
-CMD /start-griddb.sh
+CMD ["/bin/bash", "/start-griddb.sh"]
