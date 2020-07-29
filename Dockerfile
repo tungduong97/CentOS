@@ -16,3 +16,6 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 COPY start-griddb.sh /
 RUN chmod a+x /start-griddb.sh
 CMD /start-griddb.sh
+
+WORKDIR $GS_HOME
+USER gsadm
