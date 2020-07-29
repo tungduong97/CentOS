@@ -14,5 +14,5 @@ sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 /var/lib/gridstore/conf/gs_cluster.json
 
 COPY start-griddb.sh /
-RUN chmod a+x start-griddb.sh
+RUN chmod a+x /start-griddb.sh
 CMD /start-griddb.sh
