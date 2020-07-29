@@ -13,7 +13,7 @@ RUN set -x && \
 sed -i -e s/\"clusterName\":\"\"/\"clusterName\":\"dockerGridDB\"/g \
 /var/lib/gridstore/conf/gs_cluster.json
 
+WORKDIR $GS_HOME
 COPY start-griddb.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/start-griddb.sh entrypoint.sh
-RUN chmod +x entrypoint.sh
 CMD ./entrypoint.sh
