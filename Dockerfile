@@ -1,7 +1,7 @@
 FROM centos:7
 
-ENV GRIDDB_VERSION=4.3.0
-RUN rpm -ivh https://github.com/griddb/griddb_nosql/releases/download/v${GRIDDB_VERSION}/griddb_nosql-${GRIDDB_VERSION}-1.linux.x86_64.rpm
+ENV GRIDDB_VERSION=4.5.0
+RUN rpm -ivh https://github.com/griddb/griddb/releases/download/v${GRIDDB_VERSION}/griddb-${GRIDDB_VERSION}-1.linux.x86_64.rpm
 
 ENV GS_HOME=/var/lib/gridstore
 ENV GS_LOG=/var/lib/gridstore/log
