@@ -7,6 +7,7 @@ ENV GS_HOME=/var/lib/gridstore
 ENV GS_LOG=/var/lib/gridstore/log
 
 WORKDIR /root/
+RUN yum install -y java-1.8.0-openjdk-devel
 RUN set -x &&\
 su - gsadm -c "gs_passwd admin -p admin"
 RUN set -x && \
