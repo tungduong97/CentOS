@@ -7,7 +7,7 @@ FROM centos:7
 #Add user
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
 RUN useradd centos
-RUN usermod -aG wheel centos
+RUN usermod -aG sudo centos
 
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
