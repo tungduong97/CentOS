@@ -1,9 +1,10 @@
 FROM centos:7
 
 #Install Development Tools
-#RUN set -eux \
-#    && yum groupinstall -y "Development Tools" \
-#    && yum clean all
+RUN set -eux \
+    && yum install java ant \
+    && yum groupinstall -y "Development Tools"  \
+    && yum clean all
 #Add user
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
 RUN useradd centos
