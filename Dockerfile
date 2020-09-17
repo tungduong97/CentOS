@@ -2,7 +2,7 @@ FROM centos:7
 
 #Install Development Tools
 RUN set -eux \
-    && yum install -y java-1.8.0-openjdk-devel ant python3 \
+    && yum install -y java-1.8.0-openjdk-devel ant python3 zlib-devel \
     && yum groupinstall -y "Development Tools"  \
     && yum clean all
 #Add user
