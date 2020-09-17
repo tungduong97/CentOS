@@ -2,7 +2,7 @@ FROM centos:7
 
 #Install Development Tools
 RUN set -eux \
-    && yum install java ant \
+    && yum install java ant python3 -y \
     && yum groupinstall -y "Development Tools"  \
     && yum clean all
 #Add user
