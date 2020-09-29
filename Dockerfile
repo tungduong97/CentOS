@@ -15,5 +15,7 @@ COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 USER 1001
 #USER 1001:1001
+RUN chown -R 1001:root /griddb_nosql
+RUN chmod -R 0775 /griddb_nosql
 WORKDIR /griddb_nosql
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
