@@ -6,14 +6,14 @@ RUN set -eux \
     && yum groupinstall -y "Development Tools"  \
     && yum clean all
 #Add user
-#RUN groupadd -r griddb && useradd -r -g griddb gsadm
-RUN adduser -r -u 1001 centos
+RUN groupadd -r griddb && useradd -r -g griddb griddb
+#RUN adduser -r -u 1001 centos
 #RUN useradd -r -u 1001 -g centos
-#RUN usermod -aG wheel centos
+RUN usermod -aG wheel griddb
 #RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 #USER 1001:1001
-USER 1001
-#WORKDIR /home/centos
+USER griddb
+WORKDIR /home/griddb
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
