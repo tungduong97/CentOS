@@ -13,9 +13,9 @@ RUN adduser -r -u 1001 -s /sbin/nologin
 #RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
-USER 1001
 #USER 1001:1001
 RUN chown -R 1001:root /griddb_nosql
 RUN chmod -R 0775 /griddb_nosql
+USER 1001
 WORKDIR /griddb_nosql
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
