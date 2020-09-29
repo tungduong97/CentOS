@@ -8,7 +8,7 @@ RUN set -eux \
 #Add user
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
 RUN addgroup -S -g 1001 centos \
-    && adduser -S -D -u 1001 -s /sbin/nologin -h /griddb_nosql -g "API Simulator User" -G centos centos \
+    && adduser -S -D -u 1001 -s /sbin/nologin -g "API Simulator User" -G centos centos \
     && chown -R centos:root /griddb_nosql \
     && chmod -R 0775 /griddb_nosql
 #RUN useradd -r -u 1001 -g centos
@@ -16,7 +16,7 @@ RUN addgroup -S -g 1001 centos \
 #RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
-USER centos
+USER 1001
 #USER 1001:1001
-WORKDIR /home/centos
+WORKDIR /griddb_nosql
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
