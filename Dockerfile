@@ -13,6 +13,6 @@ RUN set -eux \
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 #USER centos
-#USER root
+USER 1001:1001
 #WORKDIR /home/centos
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
