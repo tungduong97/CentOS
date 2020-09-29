@@ -6,7 +6,7 @@ RUN set -eux \
     && yum groupinstall -y "Development Tools"  \
     && yum clean all
 
-#RUN ln -sf /usr/bin/python3 /usr/bin/python
+RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 
