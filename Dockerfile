@@ -15,5 +15,5 @@ COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 #USER 1001:1001
 USER 1001
-WORKDIR /home/centos
+#WORKDIR /home/centos
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
