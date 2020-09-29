@@ -7,13 +7,13 @@ RUN set -eux \
     && yum clean all
 #Add user
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
-#RUN useradd -r -u 1001 -g appuser appuser
-RUN useradd -r -u 1001 -g centos
-RUN usermod -aG wheel centos
+RUN useradd -r -u 1001 -g appuser appuser
+#RUN useradd -r -u 1001 -g centos
+#RUN usermod -aG wheel centos
 #RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
-USER centos
+USER appuser
 #USER 1001:1001
-WORKDIR /home/centos
+WORKDIR /home/appuser
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
