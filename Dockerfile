@@ -9,7 +9,7 @@ RUN set -eux \
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
 #RUN useradd centos
 #RUN usermod -aG wheel centos
-RUN ln -sf /usr/bin/python3 /usr/bin/python
+#RUN ln -sf /usr/bin/python3 /usr/bin/python
 COPY docker-entrypoint.sh /
 RUN chmod a+x /docker-entrypoint.sh
 #USER centos
