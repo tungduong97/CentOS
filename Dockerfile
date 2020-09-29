@@ -15,8 +15,7 @@ RUN groupadd -r griddb && useradd -r -g griddb griddb
 #RUN adduser -r -u 1001 centos
 #RUN useradd -r -u 1001 -g centos
 RUN usermod -aG wheel griddb
-USER griddb
+USER root
 WORKDIR /home/griddb
-RUN chmod -R 777 /home/griddb
 #USER 1001:1001
 CMD ["/bin/bash", "/docker-entrypoint.sh"]
