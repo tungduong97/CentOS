@@ -7,9 +7,7 @@ RUN set -eux \
     && yum clean all
 #Add user
 #RUN groupadd -r griddb && useradd -r -g griddb gsadm
-RUN adduser -S -D -u 1001 -s /sbin/nologin -g "API Simulator User" -G centos centos \
-    && chown -R centos:root /griddb_nosql \
-    && chmod -R 0775 /griddb_nosql
+RUN adduser -r -u 1001 -s /sbin/nologin
 #RUN useradd -r -u 1001 -g centos
 #RUN usermod -aG wheel centos
 #RUN ln -sf /usr/bin/python3 /usr/bin/python
